@@ -10,6 +10,7 @@ const Container = styled.div`
 `;
 
 const Header = styled.header`
+    display: none;
 
     /* Size and alignment */
     width: 100vw;
@@ -20,7 +21,7 @@ const Header = styled.header`
     justify-content: space-between;
 
     position: fixed;
-    z-index: 99999;
+    z-index: 1;
 
     padding: 0 9rem;
 
@@ -87,6 +88,8 @@ const HeaderMenuLi = styled.li((props: PropsLi) => (`
 
     background-color: ${props.size === 'large' ? '#601B9F' : 'transparent'};
 
+    cursor: pointer;
+
     :hover {
         filter: brightness(1.5);
     }
@@ -97,15 +100,15 @@ const LeadLogoSmall = styled.img`
     width: 26rem;
     height: auto;
 
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 `
 const Main = styled.main`
 
     padding-top: 8rem;
     height: 100vh;
 
-    background-color: #FF3C5D;
     background: linear-gradient(180deg , #FF3C5D 88%, #f2526d 93%, #f48699);
+    background: #F9F9F9;
 `
 const letterAnimate = keyframes`
     0%, 100% {
@@ -117,10 +120,10 @@ const letterAnimate = keyframes`
 `
 const MainWellcome = styled.div`
 
-    max-width: 120rem;
+    max-width: 130rem;
     height: 100%;
     margin: auto;
-    padding: 0 3rem;
+    /* padding: 0 3rem; */
 
     display: flex;
     gap: 5rem;
@@ -128,10 +131,20 @@ const MainWellcome = styled.div`
     position: relative;
     
     .effectText {
-        max-width: 480px;
+        max-width: 48rem;
         text-align: left;
         font-weight: 500;
         color: #fff;
+
+        @media(max-width: 1115px) {
+            max-width: 40rem;
+        }
+        @media(max-width: 790px) {
+            max-width: 50rem;
+        }
+        @media(max-width: 790px) {
+            max-width: 45rem;
+        }
     }
 
     .effectText::after {
@@ -141,9 +154,23 @@ const MainWellcome = styled.div`
         display: inline-block;
         animation: ${letterAnimate} .7s infinite;
     }
+`
+const MainWellcomeArea = styled.div`
+    width: 90%;
+    height: 85%;
+    margin: auto;
+    
+    display: flex;
 
-    @media(max-width: 450px) {
-        padding: 0 3rem 0 2rem;
+    border-radius: 2.5rem;
+
+    background: linear-gradient(180deg , #FF3C5D 88%, #f2526d 93%, #f48699);
+
+    @media(max-width: 1030px) {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+
     }
 `
 const bannerAnimation = keyframes`
@@ -162,13 +189,16 @@ const bannerAnimation = keyframes`
 `
 const MainWellcomeBannerArea = styled.div`
 
-    width: 100%;
+    width: 51%;
     height: 100%;
 
     display: flex;
     align-items: flex-end;  
     
-    @media(max-width: 620px) {
+    @media(max-width: 950px) {
+        justify-content: center;
+    }
+    @media(max-width: 790px) {
         display: none;
     }
 `
@@ -178,7 +208,11 @@ const MainWellcomeBannerImg = styled.img`
     height: 89%;
     max-height: 100%;
 
-    animation: ${bannerAnimation} 3.8s infinite ease-in-out;
+    /* animation: ${bannerAnimation} 3.8s infinite ease-in-out; */
+
+    @media(max-width: 950px) {
+        max-height: 73%;
+    }
 
 `
 const MainWellcomeText = styled.div`
@@ -188,11 +222,13 @@ const MainWellcomeText = styled.div`
     justify-content: center;
 
 
-    width: 70%;
+    width: 49%;
+
+    
 
     h1,h2 {
         font-family: 'Epilogue', sans-serif;
-        font-size: 8.4rem;
+        font-size: 6.4rem;
         font-weight: 700;
         line-height: 8.5rem;
         letter-spacing: -0.02em;
@@ -200,17 +236,18 @@ const MainWellcomeText = styled.div`
         color: #F9F9F9;
     }
     h2 {
-        margin: 1rem 0 2rem 0;
         text-transform: uppercase;
     }
 
     p {
+        margin: 1rem 0;
         font-family: 'Epilogue', sans-serif;
-        font-size: 2.6rem;
+        font-size: 2.1rem;
         font-weight: 500;
         line-height: 3rem;
 
         color: #F9F9F9;
+
     }
 
 
@@ -236,7 +273,7 @@ const MainWellcomeText = styled.div`
         }
     }
 
-    @media(max-width: 1100px) {
+    @media(max-width: 1115px) {
         h1,h2 {
             font-size: 4.4rem;
             line-height: 4.8rem;
@@ -247,17 +284,24 @@ const MainWellcomeText = styled.div`
             line-height: 2rem;
         }
     }
-    @media(max-width: 745px) {
-        width: 100%;
+    @media(max-width: 1030px) {
+        padding-left: 2rem;
+    }
+    @media(max-width: 790px) {
+        width: 85%;
+        padding-left: 0;
+
+        margin: auto;
+
 
         h1,h2 {
-            font-size: 3.4rem;
-            line-height: 3.2rem;
+            font-size: 7rem;
+            line-height: 8rem;
         }
 
         p {
-            font-size: 1.3rem;
-            line-height: 1.6rem;
+            font-size: 2.5rem;
+            line-height: 2.8rem;
         }
     }
     @media(max-width: 620px) {
@@ -295,7 +339,7 @@ const MainWellcomeText = styled.div`
             font-size: 1.5rem;
         }
     }
-    @media(max-width: 333px) {
+    @media(max-width: 345px) {
         h1, h2 {
             font-size: 3.5rem;
             line-height: 3.5rem;
@@ -313,7 +357,7 @@ type MainSectionProps = {
 }
 const MainSection = styled.div((props:MainSectionProps) => (
     `
-        padding-top: 1rem;
+        padding-top: 2rem;
 
         background-color: ${props.bgColor};
         height: calc(100vh - 8rem);
@@ -397,6 +441,9 @@ const MainSectionSubTitle = styled.h1`
     @media(max-width: 640px) {
         font-size: 2rem;
     }
+    @media(max-width: 425px) {
+        font-size: 1.5rem;
+    }
     
 `
 const MainSectionTitle = styled.h1`
@@ -408,6 +455,9 @@ const MainSectionTitle = styled.h1`
     color: #601B9F;
     @media(max-width: 640px) {
         font-size: 3.5rem;
+    }
+    @media(max-width: 425px) {
+        font-size: 3rem;
     }
 `
 
@@ -567,6 +617,7 @@ const MainSectionPartialImg = styled.img`
 
 
 
+
 export {
     Container,
     Header,
@@ -575,6 +626,7 @@ export {
     HeaderMenuLi,
     Main,
     MainWellcome,
+    MainWellcomeArea,
     MainWellcomeBannerArea,
     MainWellcomeBannerImg,
     MainWellcomeText,

@@ -18,8 +18,8 @@ import alura from '../../assets/alura.png';
 
 export const Home = () => {
 
-    const partials = [magalu, stoodi, nexo, umBi, alura]
-
+    const partials = [magalu, stoodi, nexo, umBi, alura];
+    
     return(
         <C.Container>
             <C.Header>
@@ -29,11 +29,11 @@ export const Home = () => {
                     </Link>
                 </C.HeaderLeadLogo>
                 <C.HeaderMenu>
-                    <Link to='/'>
-                        <C.HeaderMenuLi size='large'>
+                        <C.HeaderMenuLi 
+                            data-tf-slider="YZEhZ6Ln"
+                            size='large'>
                             Realizar Inscrição
                         </C.HeaderMenuLi>
-                    </Link>
                     <a target='_blank' href='https://lead.maisatheneu.com.br/'>
                         <C.HeaderMenuLi size='small'>
                             Login
@@ -44,16 +44,24 @@ export const Home = () => {
 
             <C.Main id='main'>
                 <C.MainWellcome>
-                    <C.MainWellcomeBannerArea>
-                        <C.MainWellcomeBannerImg src={boyBanner} />
-                    </C.MainWellcomeBannerArea>
-                    <C.MainWellcomeText>
-                        <C.LeadLogoSmall src={atheneu}/>
-                        <h1>Bem vind@ a</h1>
-                        <h2>jornada_lead</h2>
-                        <p className='effectText'>Inscrições abertas para a formação que vai mudar o seu futuro!</p>
-                        <button>Entrar no foguete!</button>
-                    </C.MainWellcomeText>
+                    <C.MainWellcomeArea>
+                        <C.MainWellcomeBannerArea>
+                            <C.MainWellcomeBannerImg src={boyBanner} />
+                        </C.MainWellcomeBannerArea>
+                        <C.MainWellcomeText>
+                            <C.LeadLogoSmall src={atheneu}/>
+                            <h1>Bem vind@ a</h1>
+                            <h2>jornada_lead</h2>
+                            <p className='effectText'>Inscrições abertas para a formação que vai mudar o seu futuro!</p>
+                            <button 
+                                data-tf-slider="YZEhZ6Ln" 
+                                data-tf-width="550" 
+                                data-tf-iframe-props="title=Registration Form" 
+                                data-tf-medium="snippet">
+                                Entrar no foguete!
+                            </button>
+                        </C.MainWellcomeText>
+                    </C.MainWellcomeArea>
                 </C.MainWellcome>
 
                 <C.MainSection bgColor='#F9F9F9'>
@@ -101,7 +109,10 @@ export const Home = () => {
 
                     <div className='bar'>
                         <h1>Quero fazer parte<br/>do LEAD!</h1>
-                        <button>Inscreva-se aqui!</button>
+                        <button 
+                            data-tf-slider="YZEhZ6Ln" >
+                                Inscreva-se aqui!
+                        </button>
                     </div>
                 </C.MainSection>
 

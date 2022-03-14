@@ -1,27 +1,27 @@
-const showMenu = (item, show) => {
-    if(show) {
-        item.style.display = 'flex';
-    } else {
-        item.style.display = 'none'
-    };
-};
+// const showMenu = (item, show) => {
+//     if(show) {
+//         item.style.display = 'flex';
+//     } else {
+//         item.style.display = 'none'
+//     };
+// };
 
-window.addEventListener('load', () => {
+// window.addEventListener('load', () => {
 
-    const menu =  document.getElementsByTagName('header')[0];
+//     const menu =  document.getElementsByTagName('header')[0];
 
-    if(scrollY === 0) {
-        showMenu(menu, true);
-    };
+//     if(scrollY === 0) {
+//         showMenu(menu, true);
+//     };
 
-    window.addEventListener('touchmove', ev => {
-        showMenu(menu, false);
-    });
+//     window.addEventListener('touchmove', ev => {
+//         showMenu(menu, false);
+//     });
 
-    window.addEventListener('touchend', ev => {
-        showMenu(menu, true);
-    })
-});
+//     window.addEventListener('touchend', ev => {
+//         showMenu(menu, true);
+//     })
+// });
 
 window.addEventListener('load', () => {
     function typeWriter(elemento) {
