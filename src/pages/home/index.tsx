@@ -1,6 +1,10 @@
-import './script.js'
-import * as C from './style';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import './script.js';
+import '../../services/firebase'
+
+import * as C from './style';
 
 // Images
 import leadLogo from '../../assets/lead.svg';
@@ -16,10 +20,11 @@ import nexo from '../../assets/nexo.png';
 import umBi from '../../assets/1bi.png';
 import alura from '../../assets/alura.png';
 
-export const Home = () => {
 
-    const partials = [magalu, stoodi, nexo, umBi, alura];
+export const Home = () => {
     
+    const partials = [magalu, stoodi, nexo, umBi, alura];
+
     return(
         <C.Container>
             <C.Header>
@@ -34,7 +39,7 @@ export const Home = () => {
                             size='large'>
                             Realizar Inscrição
                         </C.HeaderMenuLi>
-                    <a target='_blank' href='https://lead.maisatheneu.com.br/'>
+                    <a target='_blank' href='https://plataforma.maisatheneu.com.br/'>
                         <C.HeaderMenuLi size='small'>
                             Login
                         </C.HeaderMenuLi>
